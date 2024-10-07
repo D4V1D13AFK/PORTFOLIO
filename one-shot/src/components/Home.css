@@ -1,0 +1,215 @@
+/* Estilos globales */
+html, body {
+    height: 100%;
+    background-color: black;
+    color: white; /* Asegura que el texto sea visible */
+}
+
+/* Sección principal */
+section {
+    min-height: 100vh;
+    padding: 5rem 9%;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4.3rem; /* Espacio entre imagen y texto */
+    background-color: black;
+    color: white;
+}
+
+/* Imagen principal */
+.home-img {
+    border-radius: 50%;
+    margin-left: 1.5rem; /* Margen izquierdo */
+    margin-bottom: 1rem; /* Margen inferior */
+    position: relative;
+    top: -3.5rem; /* Subido más arriba para alinear con el h1 */
+}
+
+.home-img img {
+    width: 36vw; /* Tamaño aumentado */
+    max-width: 360px; /* Tamaño máximo ajustado */
+    border-radius: 20%; /* Forma ovalada */
+    box-shadow: 0 0 25px #dc191b;
+    transition: 0.2s linear;
+}
+
+/* Estilos del contenido */
+.home-content h1 {
+    font-size: 4.5rem; /* Tamaño del texto */
+    font-weight: 700;
+    line-height: 1.3;
+    color: white;
+    margin-right: 2rem; /* Margen derecho reducido */
+}
+
+span {
+    color: #dc191b;
+}
+
+.home-content h3 {
+    font-size: 2.8rem; /* Tamaño del texto */
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: white;
+    white-space: nowrap; /* Evita el salto de línea */
+}
+
+.home-content p {
+    font-size: 1.4rem; /* Tamaño del texto */
+    color: white;
+    max-width: 700px; /* Limita el ancho para mejor lectura */
+}
+
+/* Estilos de los íconos sociales */
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #dc191b;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #dc191b;
+}
+
+.social-icons a:hover {
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #dc191b;
+    box-shadow: 0  0 25px #dc191b;
+}
+
+/* Botón principal */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: 0.2rem solid #dc191b;
+    color: white !important; /* Cambiado a blanco */
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 50px;
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #dc191b;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.btn:hover {
+    color: black;
+    box-shadow: 0 0 25px #dc191b;
+}
+
+a .btn{
+    color: white;
+}
+/* Animaciones de texto */
+.typing-text {
+    font-size: 28px; /* Tamaño del texto */
+    font-weight: 600;
+    min-width: 280px;
+    white-space: nowrap; /* Evita el salto de línea */
+}
+
+.typing-text span {
+    position: relative;
+}
+
+.typing-text span::before {
+    content: "software Developer";
+    color: #dc191b;
+    animation: words 20s infinite;
+    display: inline-block;
+}
+
+.typing-text span::after {
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+/* Animaciones */
+@keyframes cursor {
+    to {
+        border-left: 3px solid #dc191b;
+    }
+}
+
+@keyframes words {
+    0%, 20% {
+        content: "Web Developer";
+    }
+    21%, 40% {
+        content: "Developer";
+    }
+    41%, 60% {
+        content: "Web Designer";
+    }
+    61%, 80% {
+        content: "Student";
+    }
+    81%, 100% {
+        content: "Script Writer";
+    }
+}
+
+/* Estilos responsivos */
+@media (max-width: 1000px) {
+    .home {
+        gap: 2rem; /* Espacio reducido */
+    }
+}
+
+@media (max-width: 995px) {
+    .home {
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3 {
+        font-size: 2.5rem; /* Tamaño del texto */
+    }
+
+    .home-content h1 {
+        font-size: 4rem; /* Tamaño del texto */
+    }
+
+    .home-img img {
+        width: 60vw; /* Tamaño ajustado para pantallas pequeñas */
+        max-width: 320px; /* Tamaño máximo ajustado */
+        margin-top: 0rem; /* Margen superior reducido */
+    }
+}

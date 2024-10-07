@@ -1,0 +1,128 @@
+/* Estilos globales */
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #040404;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    position: fixed;
+    top: 0;
+    right: 0; /* Mantiene la barra de navegación pegada al lado derecho */
+    height: 50px;
+    background: #020303;
+    border-radius: 0 0 0 8px; /* Ajuste del borde redondeado para la esquina inferior izquierda */
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    width: 100%; /* Ancho completo de la ventana */
+    padding: 0 10px; /* Espacio interior a la izquierda y derecha */
+}
+
+/* Estilos para el logo */
+.navbar-logo {
+    position: absolute;
+    left: 0; /* Alinea el logo al borde izquierdo */
+    margin-left: 20px; /* Aumenta el margen para el espacio entre el logo y el borde */
+}
+
+.navbar-logo img {
+    height: 40px; /* Ajusta el tamaño del logo según sea necesario */
+    width: auto;
+}
+
+/* Contenedor para los enlaces de navegación */
+.navbar-links {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Empuja los enlaces hacia el borde derecho */
+    padding-right: 20px; /* Espacio interior a la derecha */
+    position: relative; /* Permite posicionar el span en relación a este contenedor */
+}
+
+/* Estilos para los enlaces de navegación */
+.navbar-links a {
+    position: relative;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    padding: 0 23px;
+    z-index: 1;
+}
+
+/* Estilos para el span animado */
+.navbar-links span {
+    position: absolute;
+    bottom: 0; /* Alinea el span al fondo del contenedor */
+    left: 0;
+    width: 95px;
+    height: 100%;
+    background: linear-gradient(45deg, #4f1919, #dc191b);
+    border-radius: 8px;
+    transition: .5s;
+    z-index: 0; /* Mantiene el span detrás de los enlaces */
+}
+
+/* Animación del span al pasar el cursor sobre los enlaces */
+.navbar-links a:nth-child(1):hover ~ span {
+    left: 0;
+}
+
+.navbar-links a:nth-child(2):hover ~ span {
+    left: 85px;
+}
+
+.navbar-links a:nth-child(3):hover ~ span {
+    left: 183px;
+    max-width: 110px;
+}
+
+.navbar-links a:nth-child(4):hover ~ span {
+    left: 288px;
+    max-width: 115px;
+}
+
+.navbar-links a:nth-child(5):hover ~ span {
+    left: 390px;
+    max-width: 110px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 0; /* Elimina el padding para pantallas pequeñas */
+    }
+
+    .navbar-logo {
+        margin-left: 10px; /* Espacio reducido en pantallas pequeñas */
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        margin-left: 0;
+        padding-right: 0;
+    }
+
+    .navbar-links a {
+        padding: 10px;
+    }
+
+    .navbar-links span {
+        display: none; /* Oculta el span en pantallas pequeñas */
+    }
+}
